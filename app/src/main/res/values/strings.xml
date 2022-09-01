@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CryptoMarket</string>
+    <string name="contDesc_coin_icon">Coin Icon</string>
+    <string name="coin_symbol">BTC</string>
+    <string name="coin_name">Bitcoin</string>
+    <string name="coin_change">-1.44</string>
+    <string name="coin_price">20015.16</string>
 </resources>
