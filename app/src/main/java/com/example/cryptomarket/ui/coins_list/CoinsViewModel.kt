@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class CoinsViewState(
-    val coins: List<CoinItem>,
+    val coins: List<CoinItem> = emptyList(),
     val isLoading: Boolean = true,
 )
 
@@ -20,7 +20,7 @@ class CoinsViewModel @Inject constructor(
     private val coinRepository: CoinRepository
 ) : ViewModel() {
 
-    private val _coinsViewState = MutableLiveData<CoinsViewState>()
+    private val _coinsViewState = MutableLiveData(CoinsViewState())
     val coinsViewState: LiveData<CoinsViewState>
         get() = _coinsViewState
 

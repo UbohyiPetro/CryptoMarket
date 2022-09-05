@@ -39,8 +39,22 @@ class CoinsListAdapter : ListAdapter<CoinItem, CoinsListAdapter.CoinsViewHolder>
 
     override fun onBindViewHolder(holder: CoinsViewHolder, position: Int) {
         val coin = currentList[position]
+        val oldIconUrl = coin.iconUrl
+        var newIconUrl = ""
+        val png: CharSequence = "png"
+        oldIconUrl.replaceRange(oldIconUrl.length - 3, oldIconUrl.length, png)
+            .also { newIconUrl = it }
         holder.itemView.apply {
-            Glide.with(this).load(coin.iconUrl).fitCenter().into(ivCoinIcon)
+            Glide.with(this).load(newIconUrl).fitCenter().into(ivCoinIcon)
+            tvCoinSymbol.text = coin.symbol
+            tvCoinName.text = coin.name
+            when {
+                coin.change < 0 -> tvCoinChange.setTextColor(resources.getColor(R.color.red))
+                coin.change > 0 -> tvCoinChange.setTextColor(resources.getColor(R.color.green))
+                else -> tvCoinChange.setTextColor(resources.getColor(R.color.white))
+            }
+            tvCoinChange.text = coin.change.toString()
+            tvCoinPrice.text = coin.price.toString()
         }
     }
 
