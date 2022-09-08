@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.cryptomarket.R
 import com.example.cryptomarket.ui.model.CoinItem
 import kotlinx.android.synthetic.main.coin_item.view.*
+import java.math.BigDecimal
 
 
 class CoinsListAdapter : ListAdapter<CoinItem, CoinsListAdapter.CoinsViewHolder>(
@@ -54,7 +55,12 @@ class CoinsListAdapter : ListAdapter<CoinItem, CoinsListAdapter.CoinsViewHolder>
                 else -> tvCoinChange.setTextColor(resources.getColor(R.color.white))
             }
             tvCoinChange.text = coin.change.toString()
-            tvCoinPrice.text = coin.price.toString()
+            var coinPrice = coin.price.toString()
+            if (coinPrice.contains('E')) {
+                val n = BigDecimal(coinPrice)
+                coinPrice = n.toPlainString()
+            }
+            tvCoinPrice.text = coinPrice
         }
     }
 

@@ -25,9 +25,17 @@ class CoinsViewModel @Inject constructor(
         get() = _coinsViewState
 
     init {
+        getCoins()
+    }
+
+    private fun getCoins() {
         viewModelScope.launch {
             val coins = coinRepository.getCoins()
             _coinsViewState.value = CoinsViewState(coins = coins, isLoading = false)
         }
+    }
+
+    fun pullToRefresh() {
+        getCoins()
     }
 }
