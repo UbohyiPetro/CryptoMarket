@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.coins_list_fragment.*
 
 @AndroidEntryPoint
-class CoinsLIstFragment : Fragment(R.layout.coins_list_fragment) {
+class CoinsListFragment : Fragment(R.layout.coins_list_fragment) {
 
     private val coinsViewModel: CoinsViewModel by viewModels()
     private val coinsListAdapter: CoinsListAdapter = CoinsListAdapter()

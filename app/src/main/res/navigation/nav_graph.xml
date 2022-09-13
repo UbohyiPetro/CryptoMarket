@@ -2,13 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/coinsLIstFragment">
+    app:startDestination="@id/coinsListFragment">
     <fragment
-        android:id="@+id/coinsLIstFragment"
-        android:name="com.example.cryptomarket.ui.coins_list.CoinsLIstFragment"
-        android:label="CoinsLIstFragment" >
+        android:id="@+id/coinsListFragment"
+        android:name="com.example.cryptomarket.ui.coins_list.CoinsListFragment"
+        android:label="CoinsListFragment" >
         <action
-            android:id="@+id/action_coinsLIstFragment_to_coinDetailsFragment"
+            android:id="@+id/action_coinsListFragment_to_coinDetailsFragment"
             app:destination="@id/coinDetailsFragment" />
     </fragment>
     <fragment

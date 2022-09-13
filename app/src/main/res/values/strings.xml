@@ -8,4 +8,6 @@
     <string name="balance">Balance</string>
     <string name="_3_39695">3,39695</string>
     <string name="_130_52">=130,52$</string>
+    <string name="markets">Markets</string>
+    <string name="wallet">Wallet</string>
 </resources>

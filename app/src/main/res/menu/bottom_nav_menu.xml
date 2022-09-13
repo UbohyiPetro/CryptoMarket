@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/markets"
+        android:enabled="true"
+        android:icon="@drawable/ic_signal_cellular"
+        android:title="@string/markets" />
+
+    <item
+        android:id="@+id/wallet"
+        android:enabled="true"
+        android:icon="@drawable/ic_account_balance_wallet"
+        android:title="@string/wallet" />
+</menu>

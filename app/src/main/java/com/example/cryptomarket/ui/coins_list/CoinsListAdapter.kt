@@ -44,7 +44,7 @@ class CoinsListAdapter : ListAdapter<CoinItem, CoinsListAdapter.CoinsViewHolder>
         holder.itemView.apply {
             setOnClickListener {
                 findNavController().navigate(
-                    CoinsLIstFragmentDirections.actionCoinsLIstFragmentToCoinDetailsFragment(
+                    CoinsListFragmentDirections.actionCoinsListFragmentToCoinDetailsFragment(
                         coin.uuid
                     )
                 )
