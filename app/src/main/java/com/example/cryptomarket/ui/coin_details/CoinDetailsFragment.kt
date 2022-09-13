@@ -8,9 +8,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.cryptomarket.R
+import com.example.cryptomarket.helper.extensions.fromSVGtoPNG
 import com.example.cryptomarket.ui.coin_details.model.CoinDetailsItem
-import com.example.cryptomarket.ui.coins_list.CoinsViewState
-import com.example.cryptomarket.ui.coins_list.fromSVGtoPNG
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.coin_details_fragment.*
 

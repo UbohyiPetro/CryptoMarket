@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/markets"
+        android:id="@+id/coinsListFragment"
         android:enabled="true"
         android:icon="@drawable/ic_signal_cellular"
         android:title="@string/markets" />
 
     <item
-        android:id="@+id/wallet"
+        android:id="@+id/walletFragment"
         android:enabled="true"
         android:icon="@drawable/ic_account_balance_wallet"
         android:title="@string/wallet" />

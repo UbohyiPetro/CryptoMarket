@@ -19,4 +19,8 @@
             android:name="uuid"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.example.cryptomarket.ui.wallet.WalletFragment"
+        android:label="WalletFragment" />
 </navigation>

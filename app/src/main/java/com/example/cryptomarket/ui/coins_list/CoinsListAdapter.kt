@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cryptomarket.R
+import com.example.cryptomarket.helper.extensions.fromSVGtoPNG
 import com.example.cryptomarket.ui.coins_list.model.CoinItem
 import kotlinx.android.synthetic.main.coin_item.view.*
 import java.math.BigDecimal
@@ -68,7 +69,3 @@ class CoinsListAdapter : ListAdapter<CoinItem, CoinsListAdapter.CoinsViewHolder>
     }
 }
 
-fun String.fromSVGtoPNG(): String {
-    val png: CharSequence = "png"
-    return this.replaceRange(this.length - 3, this.length, png)
-}
