@@ -1,4 +1,4 @@
-package com.example.cryptomarket.repository.api.model
+package com.example.cryptomarket.repository.api.model.coins
 
 data class Data(
     val coins: List<Coin>,

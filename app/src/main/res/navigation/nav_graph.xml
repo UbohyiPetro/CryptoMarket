@@ -6,5 +6,17 @@
     <fragment
         android:id="@+id/coinsLIstFragment"
         android:name="com.example.cryptomarket.ui.coins_list.CoinsLIstFragment"
-        android:label="CoinsLIstFragment" />
+        android:label="CoinsLIstFragment" >
+        <action
+            android:id="@+id/action_coinsLIstFragment_to_coinDetailsFragment"
+            app:destination="@id/coinDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coinDetailsFragment"
+        android:name="com.example.cryptomarket.ui.coin_details.CoinDetailsFragment"
+        android:label="CoinDetailsFragment" >
+        <argument
+            android:name="uuid"
+            app:argType="string" />
+    </fragment>
 </navigation>

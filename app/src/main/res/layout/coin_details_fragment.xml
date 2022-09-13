@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivCoinDetailsIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCoinDetailsSymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/coin_symbol"
+        android:layout_marginHorizontal="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCoinDetailsIcon"
+        app:layout_constraintStart_toEndOf="@+id/ivCoinDetailsIcon"
+        app:layout_constraintTop_toTopOf="@+id/ivCoinDetailsIcon" />
+
+    <TextView
+        android:id="@+id/tvBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:text="@string/balance"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ivCoinDetailsIcon"
+        app:layout_constraintStart_toStartOf="@+id/ivCoinDetailsIcon"
+        app:layout_constraintTop_toBottomOf="@+id/ivCoinDetailsIcon" />
+
+    <TextView
+        android:id="@+id/tvCoinBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_3_39695"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvBalance"
+        app:layout_constraintStart_toStartOf="@+id/tvBalance"
+        app:layout_constraintTop_toBottomOf="@+id/tvBalance" />
+
+    <TextView
+        android:id="@+id/tvCoinBalanceDollarPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/_130_52"
+        app:layout_constraintEnd_toEndOf="@+id/tvCoinBalance"
+        app:layout_constraintStart_toStartOf="@+id/tvCoinBalance"
+        app:layout_constraintTop_toBottomOf="@+id/tvCoinBalance" />
+
+    <ProgressBar
+        android:id="@+id/pbCoinDetailsLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

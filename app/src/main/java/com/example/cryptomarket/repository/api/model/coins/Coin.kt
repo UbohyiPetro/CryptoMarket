@@ -1,6 +1,6 @@
-package com.example.cryptomarket.repository.api.model
+package com.example.cryptomarket.repository.api.model.coins
 
-import com.example.cryptomarket.ui.model.CoinItem
+import com.example.cryptomarket.ui.coins_list.model.CoinItem
 
 data class Coin(
     val `24hVolume`: String,
@@ -23,6 +23,7 @@ data class Coin(
 
 fun Coin.toCoinItem(): CoinItem {
     return CoinItem(
+        uuid = uuid,
         symbol = symbol,
         name = name,
         price = price.toFloat(),

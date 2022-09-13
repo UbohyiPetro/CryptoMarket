@@ -1,7 +1,6 @@
 package com.example.cryptomarket.ui.coins_list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -10,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.cryptomarket.R
-import com.example.cryptomarket.ui.model.CoinItem
+import com.example.cryptomarket.ui.coins_list.model.CoinItem
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.coins_list_fragment.*
 

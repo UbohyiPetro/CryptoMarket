@@ -5,4 +5,7 @@
     <string name="coin_name">Bitcoin</string>
     <string name="coin_change">-1.44</string>
     <string name="coin_price">20015.16</string>
+    <string name="balance">Balance</string>
+    <string name="_3_39695">3,39695</string>
+    <string name="_130_52">=130,52$</string>
 </resources>
