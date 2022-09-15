@@ -8,7 +8,9 @@
         <entry key="..\:/Users/petro.ubohyi/StudioProjects/CryptoMarket/app/src/main/res/layout/coins_list_fragment.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19722222222222222" />
         <entry key="app/src/main/res/layout/coin_details_fragment.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/layout/coin_item.xml" value="0.22870370370370371" />
         <entry key="app/src/main/res/layout/coins_list_fragment.xml" value="0.18425925925925926" />
+        <entry key="app/src/main/res/layout/wallet_coin_item.xml" value="0.2988096220482176" />
         <entry key="app/src/main/res/layout/wallet_fragment.xml" value="0.2807485068958624" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.23981481481481481" />
       </map>

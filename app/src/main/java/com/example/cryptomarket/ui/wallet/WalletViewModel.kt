@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class WalletViewState(
-    val walletCoinLists: List<WalletCoinItem> = emptyList(),
+    val walletCoins: List<WalletCoinItem> = emptyList(),
     val isLoading: Boolean = true,
 )
 
@@ -29,7 +29,7 @@ class WalletViewModel @Inject constructor(
         viewModelScope.launch {
             coinRepository.observeWalletCoin().collect { coins ->
                 WalletViewState(
-                    walletCoinLists = coins.map { coinEntity ->
+                    walletCoins = coins.map { coinEntity ->
                         coinEntity.toWalletCoinItem()
                     },
                     isLoading = false,

@@ -6,8 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.cryptomarket.R
+import com.example.cryptomarket.helper.extensions.fromSVGtoPNG
 import com.example.cryptomarket.ui.wallet.model.WalletCoinItem
+import kotlinx.android.synthetic.main.wallet_coin_item.view.*
+import java.math.BigDecimal
 
 class WalletAdapter : ListAdapter<WalletCoinItem, WalletAdapter.WalletViewHolder>(
     object : DiffUtil.ItemCallback<WalletCoinItem>() {
@@ -33,7 +37,7 @@ class WalletAdapter : ListAdapter<WalletCoinItem, WalletAdapter.WalletViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WalletViewHolder {
         return WalletViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.coin_item,
+                R.layout.wallet_coin_item,
                 parent,
                 false
             )
@@ -42,30 +46,25 @@ class WalletAdapter : ListAdapter<WalletCoinItem, WalletAdapter.WalletViewHolder
 
     override fun onBindViewHolder(holder: WalletViewHolder, position: Int) {
         val coin = currentList[position]
-//        holder.itemView.apply {
-//            setOnClickListener {
-//                /*findNavController().navigate(
-//                    CoinsListFragmentDirections.actionCoinsListFragmentToCoinDetailsFragment(
-//                        coin.uuid
-//                    )
-//                )*/
-//            }
-//            Glide.with(this).load(coin.iconUrl.fromSVGtoPNG()).fitCenter().into(ivCoinIcon)
-//            tvCoinSymbol.text = coin.symbol
-//            tvCoinName.text = coin.name
-//            when {
-//                coin.change < 0 -> tvCoinChange.setTextColor(resources.getColor(R.color.red))
-//                coin.change > 0 -> tvCoinChange.setTextColor(resources.getColor(R.color.green))
-//                else -> tvCoinChange.setTextColor(resources.getColor(R.color.white))
-//            }
-//            tvCoinChange.text = coin.change.toString()
-//            var coinPrice = coin.price.toString()
-//            if (coinPrice.contains('E')) {
-//                val n = BigDecimal(coinPrice)
-//                coinPrice = n.toPlainString()
-//            }
-//            tvCoinPrice.text = coinPrice
-//        }
+        holder.itemView.apply {
+            setOnClickListener {
+                /*findNavController().navigate(
+                    CoinsListFragmentDirections.actionCoinsListFragmentToCoinDetailsFragment(
+                        coin.uuid
+                    )
+                )*/
+            }
+            Glide.with(this).load(coin.iconUrl.fromSVGtoPNG()).fitCenter().into(ivWalletCoinIcon)
+            tvWalletCoinSymbol.text = coin.symbol
+            tvWalletCoinName.text = coin.name
+            var numberOfCoin = coin.numberOfCoin.toString()
+            if (numberOfCoin.contains('E')) {
+                val n = BigDecimal(numberOfCoin)
+                numberOfCoin = n.toPlainString()
+            }
+            tvWalletNumberOfCoin.text = numberOfCoin
+            tvWalletCoinDollarPrice.text = coin.assetValue.toString()
+        }
     }
 }
 
