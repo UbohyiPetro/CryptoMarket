@@ -7,7 +7,7 @@ import com.example.cryptomarket.repository.api.model.coins.toCoinItem
 import com.example.cryptomarket.repository.database.CoinDao
 import com.example.cryptomarket.repository.database.model.CoinEntity
 import com.example.cryptomarket.ui.wallet_coin_details.model.WalletCoinDetailsItem
-import com.example.cryptomarket.ui.coins_list.model.MarketCoinItem
+import com.example.cryptomarket.ui.market.model.MarketCoinItem
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

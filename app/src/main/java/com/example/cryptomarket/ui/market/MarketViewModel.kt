@@ -1,11 +1,11 @@
-package com.example.cryptomarket.ui.coins_list
+package com.example.cryptomarket.ui.market
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cryptomarket.repository.CoinRepository
-import com.example.cryptomarket.ui.coins_list.model.MarketCoinItem
+import com.example.cryptomarket.ui.market.model.MarketCoinItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

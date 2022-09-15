@@ -1,4 +1,4 @@
-package com.example.cryptomarket.ui.coins_list
+package com.example.cryptomarket.ui.market
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cryptomarket.R
 import com.example.cryptomarket.helper.extensions.fromSVGtoPNG
-import com.example.cryptomarket.ui.coins_list.model.MarketCoinItem
+import com.example.cryptomarket.ui.market.model.MarketCoinItem
 import kotlinx.android.synthetic.main.coin_item.view.*
 import java.math.BigDecimal
 

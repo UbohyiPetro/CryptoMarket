@@ -1,4 +1,4 @@
-package com.example.cryptomarket.ui.coins_list
+package com.example.cryptomarket.ui.market
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.cryptomarket.R
-import com.example.cryptomarket.ui.coins_list.model.MarketCoinItem
+import com.example.cryptomarket.ui.market.model.MarketCoinItem
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.coins_list_fragment.*
 

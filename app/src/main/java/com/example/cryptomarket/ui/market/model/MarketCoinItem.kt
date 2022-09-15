@@ -1,4 +1,4 @@
-package com.example.cryptomarket.ui.coins_list.model
+package com.example.cryptomarket.ui.market.model
 
 data class MarketCoinItem(
     val uuid: String,
