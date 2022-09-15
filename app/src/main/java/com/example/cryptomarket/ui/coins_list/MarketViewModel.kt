@@ -5,13 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cryptomarket.repository.CoinRepository
-import com.example.cryptomarket.ui.coins_list.model.CoinItem
+import com.example.cryptomarket.ui.coins_list.model.MarketCoinItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class CoinsViewState(
-    val coins: List<CoinItem> = emptyList(),
+    val marketCoins: List<MarketCoinItem> = emptyList(),
     val isLoading: Boolean = true,
 )
 
@@ -31,7 +31,7 @@ class CoinsViewModel @Inject constructor(
     private fun getCoins() {
         viewModelScope.launch {
             val coins = coinRepository.getCoins()
-            _coinsViewState.value = CoinsViewState(coins = coins, isLoading = false)
+            _coinsViewState.value = CoinsViewState(marketCoins = coins, isLoading = false)
         }
     }
 

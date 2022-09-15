@@ -1,23 +1,22 @@
-package com.example.cryptomarket.ui.coin_details
+package com.example.cryptomarket.ui.wallet_coin_details
 
 import androidx.lifecycle.*
 import com.example.cryptomarket.repository.CoinRepository
-import com.example.cryptomarket.ui.coin_details.model.CoinDetailsItem
-import com.example.cryptomarket.ui.coins_list.CoinsViewState
+import com.example.cryptomarket.ui.wallet_coin_details.model.WalletCoinDetailsItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class CoinDetailsViewState(
-    val coin: CoinDetailsItem? = null,
+    val walletCoin: WalletCoinDetailsItem? = null,
     val isLoading: Boolean = true,
 )
 
 
 @HiltViewModel
-class CoinDetailsViewModel @Inject constructor(
+class WalletCoinDetailsViewModel @Inject constructor(
     private val coinRepository: CoinRepository,
-    private val savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val uuid: String? = savedStateHandle.get<String>("uuid")
@@ -30,9 +29,11 @@ class CoinDetailsViewModel @Inject constructor(
         viewModelScope.launch {
             if (uuid != null) {
                 val coin = coinRepository.getCoin(uuid = uuid)
-                _coinDetailsViewState.value = CoinDetailsViewState(coin = coin, isLoading = false)
+                _coinDetailsViewState.value =
+                    CoinDetailsViewState(walletCoin = coin, isLoading = false)
             } else {
-                _coinDetailsViewState.value = CoinDetailsViewState(coin = null, isLoading = true)
+                _coinDetailsViewState.value =
+                    CoinDetailsViewState(walletCoin = null, isLoading = true)
             }
         }
     }

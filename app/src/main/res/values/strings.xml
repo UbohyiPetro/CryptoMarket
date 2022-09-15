@@ -10,4 +10,5 @@
     <string name="_130_52">=130,52$</string>
     <string name="markets">Markets</string>
     <string name="wallet">Wallet</string>
+    <string name="own_capital_btc">Own Capital (BTC)</string>
 </resources>

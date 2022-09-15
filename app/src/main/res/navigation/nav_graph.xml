@@ -5,16 +5,12 @@
     app:startDestination="@id/coinsListFragment">
     <fragment
         android:id="@+id/coinsListFragment"
-        android:name="com.example.cryptomarket.ui.coins_list.CoinsListFragment"
-        android:label="CoinsListFragment" >
-        <action
-            android:id="@+id/action_coinsListFragment_to_coinDetailsFragment"
-            app:destination="@id/coinDetailsFragment" />
-    </fragment>
+        android:name="com.example.cryptomarket.ui.coins_list.MarketFragment"
+        android:label="CoinsListFragment" />
     <fragment
-        android:id="@+id/coinDetailsFragment"
-        android:name="com.example.cryptomarket.ui.coin_details.CoinDetailsFragment"
-        android:label="CoinDetailsFragment" >
+        android:id="@+id/walletCoinDetailsFragment"
+        android:name="com.example.cryptomarket.ui.wallet_coin_details.WalletCoinDetailsFragment"
+        android:label="WalletCoinDetailsFragment">
         <argument
             android:name="uuid"
             app:argType="string" />
@@ -22,5 +18,9 @@
     <fragment
         android:id="@+id/walletFragment"
         android:name="com.example.cryptomarket.ui.wallet.WalletFragment"
-        android:label="WalletFragment" />
+        android:label="WalletFragment">
+        <action
+            android:id="@+id/action_walletFragment_to_walletCoinDetailsFragment"
+            app:destination="@id/walletCoinDetailsFragment" />
+    </fragment>
 </navigation>

@@ -9,15 +9,15 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.cryptomarket.R
-import com.example.cryptomarket.ui.coins_list.model.CoinItem
+import com.example.cryptomarket.ui.coins_list.model.MarketCoinItem
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.coins_list_fragment.*
 
 @AndroidEntryPoint
-class CoinsListFragment : Fragment(R.layout.coins_list_fragment) {
+class MarketFragment : Fragment(R.layout.coins_list_fragment) {
 
     private val coinsViewModel: CoinsViewModel by viewModels()
-    private val coinsListAdapter: CoinsListAdapter = CoinsListAdapter()
+    private val marketAdapter: MarketAdapter = MarketAdapter()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,8 +30,8 @@ class CoinsListFragment : Fragment(R.layout.coins_list_fragment) {
         val coinsViewStateObserver = Observer<CoinsViewState> { viewState ->
             when {
                 viewState.isLoading -> showLoading()
-                viewState.coins.isNotEmpty() -> {
-                    showLoaded(viewState.coins)
+                viewState.marketCoins.isNotEmpty() -> {
+                    showLoaded(viewState.marketCoins)
                     pullToRefresh.isRefreshing = false
                 }
             }
@@ -41,15 +41,15 @@ class CoinsListFragment : Fragment(R.layout.coins_list_fragment) {
 
     private fun setupRecyclerView() {
         rvCoins.apply {
-            adapter = coinsListAdapter
+            adapter = marketAdapter
             layoutManager = LinearLayoutManager(activity)
         }
     }
 
-    private fun showLoaded(coinsList: List<CoinItem>) {
+    private fun showLoaded(coinsMarketCoin: List<MarketCoinItem>) {
         pbCoinsLoading.isVisible = false
         rvCoins.isVisible = true
-        coinsListAdapter.submitList(coinsList)
+        marketAdapter.submitList(coinsMarketCoin)
     }
 
     private fun showLoading() {
